@@ -66,4 +66,6 @@ def is_product_availability_matrix(matrix_a, matrix_b):
 def matrix_product(matrix_a, matrix_b):
     if is_product_availability_matrix(matrix_a, matrix_b) == False:
         raise ArithmeticError
-    return None
+    else:
+        result =  [[ sum(a*b for a,b in zip(k,i)) for k in zip(*matrix_b) ] for i in matrix_a]
+    return result
